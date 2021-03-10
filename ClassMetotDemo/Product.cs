@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassMetotDemo
 {
-    interface IProduct
+    class Product
     {
         public int Id { get; set; }
         public double AccountBalance { get; set; }

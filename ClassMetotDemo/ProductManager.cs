@@ -6,12 +6,12 @@ namespace ClassMetotDemo
 {
     class ProductManager
     {
-        public void Add(IProduct product)
+        public void Add(Product product)
         {
             product.AccountBalance = 0;
             Console.WriteLine(product.Id + " başarıyla eklendi!");
         }
-        public void List(IProduct[] products)
+        public void List(Product[] products)
         {
             Console.WriteLine("---------- Müşteri Listesi ----------");
             foreach (var product in products)
@@ -20,7 +20,7 @@ namespace ClassMetotDemo
             }
             Console.WriteLine("\n");
         }
-        public void Delete(IProduct product)
+        public void Delete(Product product)
         {
             Console.WriteLine(product.Id + " başarıyla silindi!");
         }

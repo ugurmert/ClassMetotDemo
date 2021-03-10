@@ -38,7 +38,7 @@ namespace ClassMetotDemo
                 AccountBalance = 0
             };
 
-            IProduct[] products = new IProduct[] { product1, product2, product3 };
+            Product[] products = new Product[] { product1, product2, product3 };
 
             ProductManager productManager = new ProductManager();
 
