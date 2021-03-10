@@ -6,24 +6,23 @@ namespace ClassMetotDemo
 {
     class ProductManager
     {
-        public void Add(Product product)
+        public void Add(IProduct product)
         {
             product.AccountBalance = 0;
-            Console.WriteLine(product.FirstName + " " + product.LastName + "\nbaşarıyla eklendi");
-            Console.WriteLine("\n----------\n");
+            Console.WriteLine(product.Id + " başarıyla eklendi!");
         }
-        public void List(Product[] products)
+        public void List(IProduct[] products)
         {
             Console.WriteLine("---------- Müşteri Listesi ----------");
-            foreach (Product product in products)
+            foreach (var product in products)
             {
-                Console.WriteLine("\nAd Soyad: " + product.FirstName + " " + product.LastName + "\nTelefon: " + product.Phone + "\nHesap Bakiyesi: " + product.AccountBalance);
+                Console.WriteLine("\nID: " + product.Id + "\nTelefon: " + product.Phone + "\nHesap Bakiyesi: " + product.AccountBalance);
             }
-            Console.WriteLine("\n----------\n");
+            Console.WriteLine("\n");
         }
-        public void Delete(Product product)
+        public void Delete(IProduct product)
         {
-            Console.WriteLine(product.FirstName + " " + product.LastName + "\nbaşarıyla silindi");
+            Console.WriteLine(product.Id + " başarıyla silindi!");
         }
     }
 }

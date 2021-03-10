@@ -6,36 +6,50 @@ namespace ClassMetotDemo
     {
         static void Main(string[] args)
         {
-            Product product1 = new Product();
-            product1.FirstName = "Kadir Uğur";
-            product1.LastName = "Mert";
-            product1.Phone = "02125556677";
-            product1.City = 1;
+            Individual product1 = new Individual
+            {
+                Id = 1,
+                FirstName = "Kadir Uğur",
+                LastName = "Mert",
+                TCKimlikNo = "12345678910",
+                Phone = "02125556677",
+                City = 1,
+                AccountBalance = 0
+            };
 
-            Product product2 = new Product();
-            product2.FirstName = "Burak";
-            product2.LastName = "Seçginer";
-            product2.Phone = "02125656677";
-            product2.City = 1;
+            Individual product2 = new Individual
+            {
+                Id = 2,
+                FirstName = "Burak",
+                LastName = "Seçginer",
+                TCKimlikNo = "12345678911",
+                Phone = "02125656677",
+                City = 1,
+                AccountBalance = 0
+            };
 
-            Product product3 = new Product();
-            product3.FirstName = "Kerem";
-            product3.LastName = "Seçer";
-            product3.Phone = "03125556677";
-            product3.City = 2;
+            Corporate product3 = new Corporate
+            {
+                Id = 3,
+                Unvan = "",
+                VergiNo = "",
+                Phone = "03125556677",
+                City = 2,
+                AccountBalance = 0
+            };
 
-            Product[] products = new Product[] {product1, product2, product3};
+            IProduct[] products = new IProduct[] { product1, product2, product3 };
 
             ProductManager productManager = new ProductManager();
 
-            foreach (Product product in products)
+            foreach (var product in products)
             {
                 productManager.Add(product);
             }
 
             product1.AccountBalance = 3000;
             product2.AccountBalance = 2500;
-            
+
             productManager.List(products);
 
             productManager.Delete(product3);
